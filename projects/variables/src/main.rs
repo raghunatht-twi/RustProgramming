@@ -18,5 +18,23 @@ fn main() {
     }
     println!("The value of y is: {y}");
 
+    let spaces = "   ";
+    let spaces = spaces.len();
+    println!("value of spaces is: {spaces}");  
+
+    let guess: u32 = "42".parse().expect("Not a number!");
+
+    println!("Your guess is: {guess }");
     println!("Hello, world!");
+
+    let sum = 5+10;
+    let difference = 95.5 -4.3;
+    let product = 4*30;
+    let quotient = 56.7/32.2;
+    let truncated: f32 = -5.0/3.0;
+    let reminder = 43%5;
+
+    println!("all the computations are sum:{sum},difference:{difference},multiplication:{product}, division:{quotient}, {reminder}, {truncated}");
+
+
 }
