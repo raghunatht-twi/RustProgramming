@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
 
     // variable assignment and printing
@@ -64,4 +66,23 @@ fn main() {
     let arr = [1,2,3,4,5,6];
     let arr1: [i32; 5] = [2;5];
     println!("The arr is{:?} and arr1 is{:?}",arr,arr1);
+
+    //use std io to generate array index out of bound exception
+    let arr_demo = [12,14,18,26,42];
+    println!("Please enter array index");
+
+    let mut index = String::new();
+    
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Index was not a number");
+
+    let element = arr_demo[index];
+    println!( "The value of the element at index {index} is: {element}");
+
 }
