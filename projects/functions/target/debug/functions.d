@@ -1,0 +1,1 @@
+/Users/tripasuri.raghunath/Documents/Programming/RustProgramming/projects/functions/target/debug/functions: /Users/tripasuri.raghunath/Documents/Programming/RustProgramming/projects/functions/src/main.rs
