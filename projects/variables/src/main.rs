@@ -1,5 +1,7 @@
 fn main() {
 
+    // variable assignment and printing
+
     const THREE_HOURS_IN_SECONDS: u32 = 3*60*60;
     let mut x = 5;
     println!("The value of x is: {x}");
@@ -8,6 +10,8 @@ fn main() {
     println!("The value of x is: {x}");
 
     println!("The contstant is: {THREE_HOURS_IN_SECONDS}");
+
+    //demonstrating the concept of shadowing
 
     let y = 5;
     let y = y + 1;
@@ -18,6 +22,9 @@ fn main() {
     }
     println!("The value of y is: {y}");
 
+
+    // about type casting in Rust
+
     let spaces = "   ";
     let spaces = spaces.len();
     println!("value of spaces is: {spaces}");  
@@ -25,7 +32,12 @@ fn main() {
     let guess: u32 = "42".parse().expect("Not a number!");
 
     println!("Your guess is: {guess }");
+
+    // The classic "Hello World", where it all begins :-)
+
     println!("Hello, world!");
+
+    // Basic operations on variables
 
     let sum = 5+10;
     let difference = 95.5 -4.3;
@@ -36,5 +48,20 @@ fn main() {
 
     println!("all the computations are sum:{sum},difference:{difference},multiplication:{product}, division:{quotient}, {reminder}, {truncated}");
 
+    // Exploring the compund types - Tuples and Arrays
+    
+    let tup: (i32, f64, u8) = (-500, 6.4, 1);
+    
+    //accessing tuples by destructuring
+    let (_xt, yt, _zt) = tup;
+    println!("The value of yt is: {yt}");
 
+    //accessing tuples by indexing
+    let temp = tup.0;
+    println!("The value of xt is:{temp}");
+
+    //array examples
+    let arr = [1,2,3,4,5,6];
+    let arr1: [i32; 5] = [2;5];
+    println!("The arr is{:?} and arr1 is{:?}",arr,arr1);
 }
