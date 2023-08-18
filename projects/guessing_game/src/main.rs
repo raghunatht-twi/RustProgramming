@@ -44,5 +44,5 @@ fn main() {
 	    }
     }
 
-    println!("Hello, world! Checking build");
+    println!("Hello, world! Checking build. Who is to be blamed for changes?");
 }
