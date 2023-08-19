@@ -33,6 +33,11 @@ fn main() {
 
     let s2 = s1.clone();
     println!("For the second time S1: {s1} and S2: {s2}");
+    
+    println!("Get value from fn gives_ownership: {}",gives_ownership());
+
+    println!("Take value and get back from fn: {}", take_and_give_back(s2));
+
 }
 
 //Function takes ownership implementation
@@ -45,4 +50,18 @@ fn takes_ownership(my_string: String) {
 fn makes_copy(my_integer: i32) {
     //my_integer comes into scope here
     println!("My integer value is: {my_integer}");
+}
+
+//Function to give ownership
+fn gives_ownership() -> String {//gives ownership and retruns value to function
+    let my_string = String::from("Yours truly");
+    return my_string;
+}
+
+//Function to take a string and gives back a string
+fn take_and_give_back(take_string: String) -> String {
+    
+    let mut modified_string = String::from(take_string);
+    modified_string.push_str(" for deep work");
+    return modified_string;
 }
