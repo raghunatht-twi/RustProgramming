@@ -29,10 +29,15 @@ fn main() {
     let s1 = String::from("Deep mind");
     println!("For the first time: {s1}");
 
-    takes_ownership(s1.clone()); //s1's value moves to the function
+    let (s3, len) = calculate_length(s1);
 
-    let s2 = s1.clone();
-    println!("For the second time S1: {s1} and S2: {s2}");
+    takes_ownership(s3.clone()); //s3's value moves to the function
+
+    let s2 = s3.clone();
+    println!(
+        "For the second time S3,its length: {s3},{len} and S2, its length: {s2}, {}",
+        calculate_length_only(&s2)
+    );
 
     println!("Get value from fn gives_ownership: {}", gives_ownership());
 
@@ -66,4 +71,19 @@ fn take_and_give_back(take_string: String) -> String {
     let mut modified_string = String::from(take_string);
     modified_string.push_str(" for deep work");
     return modified_string;
+}
+
+//Function to calculate length and return tuple
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len(); //len() returns the length of a String
+    return (s, length);
+}
+
+//Function to calculate length of string and return it
+fn calculate_length_only(s: &String) -> usize {
+    //s is a reference to a String and it does not take ownership
+
+    return s.len();
+
+    //Here s goes out of scope. But becuase it does not take ownership, the String is not dropped
 }
