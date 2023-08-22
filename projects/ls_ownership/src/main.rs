@@ -49,6 +49,20 @@ fn main() {
     //What happens when we try to modify something we do not own. Mutable reference works
     let mut st = String::from("what's your name");
 
+    {
+        let r1 = &mut st;
+        println!("First mutable reference is {r1}");
+    }
+
+    let r1 = &st;
+    let r2 = &st;
+
+    println!("{r1}, Second mutable reference is {r2}");
+
+    let r3 = &mut st;
+
+    println!("Third mutable reference is {r3}");
+
     println!("Printing the st: {st}");
     change(&mut st);
     println!("Printing the st after the change: {st}");
