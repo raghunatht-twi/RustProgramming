@@ -45,6 +45,13 @@ fn main() {
         "Take value and get back from fn: {}",
         take_and_give_back(s2)
     );
+
+    //What happens when we try to modify something we do not own. Mutable reference works
+    let mut st = String::from("what's your name");
+
+    println!("Printing the st: {st}");
+    change(&mut st);
+    println!("Printing the st after the change: {st}");
 }
 
 //Function takes ownership implementation
@@ -86,4 +93,9 @@ fn calculate_length_only(s: &String) -> usize {
     return s.len();
 
     //Here s goes out of scope. But becuase it does not take ownership, the String is not dropped
+}
+
+fn change(a_string: &mut String) {
+    //Function to change a string
+    a_string.push_str(", hello");
 }
